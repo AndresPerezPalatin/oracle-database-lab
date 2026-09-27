@@ -1,7 +1,9 @@
-# Oracle Database Lab
+# Oracle Database Lab - Academic Training Edition
 
 Training repository for Oracle Database administration,
 testing, change management and Git workflows.
 
 Name: Andrés Pérez-Palatín Rodríguez
 Professor: Richard Avilés López
+
+Línea extra
