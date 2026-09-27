@@ -34,14 +34,14 @@ Al borrar la carpeta `.git` se pierde la información interna que convierte esa 
 
 Git es un sistema de control de versiones que funciona en nuestro propio ordenador y permite registrar cambios, crear commits, branches, realizar merges y consultar el historial incluso sin conexión a Internet, pero GitHub, en cambio, es una plataforma web que permite alojar repositorios Git en un servidor y compartirlos con otras personas, además de proporcionar herramientas útiles de colaboración.
 
-## 10. Un compañero sube un archivo `.env` con contraseñas reales a GitHub y luego lo borra en un commit posterior. ¿Las contraseñas están seguras? ¿Qué debería hacer?
+## 10. ¿Por qué no se debe subir un archivo `.env` con contraseñas reales a un repositorio, aunque el repositorio sea privado?
 
-No, ya que aunque el archivo se elimine posteriormente, las contraseñas pueden seguir existiendo en el historial de commits del repositorio y haber sido vistas o descargadas mientras estuvieron publicadas. El compañero debería considerar esas credenciales comprometidas y revocarlas o cambiarlas inmediatamente, además de eliminar los datos sensibles del historial de Git.
+Porque un repositorio privado no garantiza que las credenciales nunca puedan quedar expuestas: otras personas con acceso pueden verlas, el repositorio puede compartirse posteriormente y las contraseñas permanecen además en el historial de Git aunque el archivo se elimine en un commit posterior. Los archivos con credenciales reales no deben versionarse; deben excluirse, por ejemplo, mediante `.gitignore`.
 
-## 11. Intentas hacer `git push` y GitHub lo rechaza con "non-fast-forward". ¿Qué significa y cuál es el flujo seguro para resolverlo?
+## 11. Un compañero te dice: "hice push y ahora GitHub me rechaza el segundo push con 'non-fast-forward'". ¿Qué ha ocurrido probablemente y qué comando ejecutarías primero?
 
-Significa que el repositorio remoto contiene commits que el branch local todavía no tiene; Git rechaza el `push` para evitar sobrescribir esos cambios. El flujo seguro consiste primero en traer e integrar los cambios remotos mediante `git pull`, resolver posibles conflictos y comprobar que el resultado es correcto (después se puede volver a ejecutar `git push`).
+Probablemente el repositorio remoto contiene commits que el branch local todavía no tiene, por lo que Git rechaza el push para evitar sobrescribir esos cambios. Ejecutaría primero `git pull` para traer e integrar los cambios remotos y resolvería cualquier conflicto antes de volver a hacer `git push`.
 
-## 12. ¿Qué ventaja aporta usar Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`...) frente a mensajes libres?
+## 12. ¿Qué tipo de Conventional Commit (`feat`, `fix`, `docs`, `test`…) usarías para: añadir un índice de rendimiento a una tabla, corregir una restricción mal definida, y actualizar el README?
 
-Conventional Commits establece un formato común para los mensajes de commit que permite identificar rápidamente el tipo de cambio realizado. Esto hace que el historial sea más claro y fácil de consultar, y facilita la automatización de tareas.
+Para añadir un índice de rendimiento utilizaría `feat:` si se considera una nueva mejora funcional del esquema; para corregir una restricción mal definida utilizaría `fix:`; y para actualizar el README utilizaría `docs:`.
