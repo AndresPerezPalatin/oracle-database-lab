@@ -1,23 +1,12 @@
-# Contributing
+# Contributing to oracle-database-lab
 
 ## Branch naming
-
-Use descriptive branch names following this convention:
-
-- `feat/<description>` for new features
-- `fix/<description>` for bug fixes
-- `docs/<description>` for documentation changes
+<type>/<issue number>-<short-description>, e.g. feature/56-customer-search, fix/85-customer-email-validation
 
 ## Commit messages
+This project follows Conventional Commits:
+<type>(scope): <description>
+Common types: feat, fix, docs, test, refactor, perf, build, ci, chore
 
-Use Conventional Commits for commit messages:
-
-- `feat:` for new features
-- `fix:` for bug fixes
-- `docs:` for documentation changes
-- `test:` for test-related changes
-- `chore:` for maintenance tasks
-
-Example:
-
-`docs: add contribution guidelines`
+## Pull Requests
+Every change must go through a Pull Request with at least one approval before merging into main.
