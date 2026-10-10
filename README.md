@@ -7,3 +7,7 @@ Name: Andrés Pérez-Palatín Rodríguez
 Professor: Richard Avilés López
 
 Línea extra
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for branch naming and commit message conventions.
