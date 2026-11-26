@@ -1,0 +1,60 @@
+== 1. Procesos de la instancia FREE (docker top = ps dentro del contenedor) ==
+13907               54321               88656               db_pmon_FREE
+13911               54321               85588               db_clmn_FREE
+13915               54321               86564               db_psp0_FREE
+13919               54321               98488               db_vktm_FREE
+13925               54321               88824               db_gen0_FREE
+13929               54321               126724              db_mman_FREE
+13935               54321               86520               db_gen2_FREE
+13937               54321               85100               db_diag_FREE
+13941               54321               92024               db_ofsd_FREE
+13943               54321               91888               db_gwpd_FREE
+13945               54321               121192              db_dbrm_FREE
+13947               54321               86224               db_vkrm_FREE
+13951               54321               106048              db_pman_FREE
+13953               54321               98632               db_dia0_FREE
+13957               54321               227104              db_dbw0_FREE
+   ... total de procesos de background (db_*_FREE en 26ai; ora_*_FREE en versiones anteriores): 57
+== 2. Procesos servidor (uno por sesión dedicada) y listener ==
+13879               54321               /opt/oracle/product/26ai/dbhomeFree/bin/tnslsnr LISTENER -inherit
+   (si no ves ningún oracleFREE es que no hay sesiones abiertas por red: abre SQLcl en otra terminal y repite)
+== 3. Memoria del contenedor (incluye la SGA) ==
+NAME          MEM USAGE / LIMIT     CPU %
+oralab-26ai   1.369GiB / 15.53GiB   2.68%
+== 4. La base de datos en disco: archivos del CDB y de FREEPDB1 ==
+drwxr-x--- 2 oracle oinstall 4.0K Nov 25 21:08 FREEPDB1
+-rw-r----- 1 oracle oinstall  18M Nov 25 23:05 control01.ctl
+-rw-r----- 1 oracle oinstall  18M Nov 25 23:05 control02.ctl
+drwxr-x--- 2 oracle oinstall 4.0K Oct 16 18:51 pdbseed
+-rw-r----- 1 oracle oinstall 201M Nov 25 23:05 redo01.log
+-rw-r----- 1 oracle oinstall 201M Nov 25 21:30 redo02.log
+-rw-r----- 1 oracle oinstall 201M Nov 25 22:00 redo03.log
+-rw-r----- 1 oracle oinstall 671M Nov 25 23:05 sysaux01.dbf
+-rw-r----- 1 oracle oinstall 1.1G Nov 25 23:05 system01.dbf
+-rw-r----- 1 oracle oinstall  21M Nov 25 22:00 temp01.dbf
+-rw-r----- 1 oracle oinstall  51M Nov 25 23:05 undotbs01.dbf
+-rw-r----- 1 oracle oinstall 7.1M Nov 25 22:05 users01.dbf
+-- FREEPDB1 --
+-rw-r----- 1 oracle oinstall 101M Nov 25 22:05 academia01.dbf
+-rw-r----- 1 oracle oinstall 101M Nov 25 22:05 clinica01.dbf
+-rw-r----- 1 oracle oinstall 101M Nov 25 22:05 fintech01.dbf
+-rw-r----- 1 oracle oinstall 101M Nov 25 22:05 logistica01.dbf
+-rw-r----- 1 oracle oinstall 101M Nov 25 22:05 retail01.dbf
+-rw-r----- 1 oracle oinstall 451M Nov 25 23:05 sysaux01.dbf
+-rw-r----- 1 oracle oinstall 301M Nov 25 23:05 system01.dbf
+-rw-r----- 1 oracle oinstall  21M Oct 16 19:06 temp01.dbf
+-rw-r----- 1 oracle oinstall 101M Nov 25 23:05 undotbs01.dbf
+-rw-r----- 1 oracle oinstall  73M Nov 25 22:05 users01.dbf
+== 5. Listener: servicios registrados ==
+Uptime                    0 days 1 hr. 34 min. 48 sec
+Default Service           FREE
+Listening Endpoints Summary...
+Services Summary...
+Service "55e54f210f100828e0630b00580adfd0" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "FREE" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "FREEXDB" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
+Service "freepdb1" has 1 instance(s).
+  Instance "FREE", status READY, has 1 handler(s) for this service...
