@@ -1,0 +1,44 @@
+
+Session altered.
+
+===== INSERT antes de V006 =====
+Antes: 2000 INSERT	       filas=  2000  lecturas l??gicas=  22479	bloques modificados= 20263  redo=  2686 KB    78.6 ms  | por fila: 10.1 bloques, 1375 bytes de redo
+
+PL/SQL procedure successfully completed.
+
+===== Aplicacion del indice V006 =====
+
+Index created.
+
+===== Q5 despues de V006 =====
+Q5 despues de V006	       filas=	   1  lecturas l??gicas=      6  f??sicas=    0       .2 ms
+plan: TABLE ACCESS BY INDEX ROWID BATCHED CLIENTE > BITMAP CONVERSION TO ROWIDS > BITMAP OR > BITMAP CONVERSION FROM ROWIDS > INDEX RANGE SCAN UX_CLI_EMAIL > BITMAP CONVERSION FROM ROWIDS > INDEX
+RANGE SCAN IX_CLI_TELEFONO
+
+PL/SQL procedure successfully completed.
+
+===== INSERT despues de V006 =====
+Despues: 2000 INSERT	       filas=  2000  lecturas l??gicas=  26542	bloques modificados= 24294  redo=  3180 KB    80.4 ms  | por fila: 12.1 bloques, 1628 bytes de redo
+
+PL/SQL procedure successfully completed.
+
+===== Espacio ocupado por el nuevo indice =====
+
+SEGMENT_NAME																 MB
+-------------------------------------------------------------------------------------------------------------------------------- ----------
+IX_CLI_TELEFONO 															  3
+
+===== Limpieza =====
+
+Index dropped.
+
+
+  CLIENTES
+----------
+    100000
+
+
+   INDICES
+----------
+	 9
+

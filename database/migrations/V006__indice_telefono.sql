@@ -1,0 +1,7 @@
+WHENEVER SQLERROR EXIT FAILURE
+ALTER SESSION SET CONTAINER = FREEPDB1;
+
+CREATE INDEX tiendasur.ix_cli_telefono
+ON tiendasur.cliente (telefono) ONLINE;
+
+EXIT
