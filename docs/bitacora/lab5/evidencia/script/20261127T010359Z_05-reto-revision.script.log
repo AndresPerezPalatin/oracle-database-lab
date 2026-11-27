@@ -1,0 +1,34 @@
+
+Session altered.
+
+
+Index created.
+
+
+Index created.
+
+Reto F original 	       filas=	 981  lecturas l??gicas=   1487  f??sicas=    0     24.6 ms
+plan: TABLE ACCESS FULL CLIENTE
+
+PL/SQL procedure successfully completed.
+
+Reto F reescrita	       filas=	 981  lecturas l??gicas=    728  f??sicas=    0        3 ms
+plan: TABLE ACCESS BY INDEX ROWID BATCHED CLIENTE > BITMAP CONVERSION TO ROWIDS > BITMAP OR > BITMAP CONVERSION FROM ROWIDS > INDEX RANGE SCAN IX_CLI_APELLIDOS > BITMAP CONVERSION FROM ROWIDS > INDEX
+RANGE SCAN IX_CLI_APELLIDOS > BITMAP CONVERSION FROM ROWIDS > INDEX RANGE SCAN IX_CLI_APELLIDOS > BITMAP CONVERSION FROM ROWIDS > SORT ORDER BY > INDEX RANGE SCAN IX_CLI_TELEFONO
+
+PL/SQL procedure successfully completed.
+
+
+no rows selected
+
+
+Index dropped.
+
+
+Index dropped.
+
+
+INDICES_TIENDASUR
+-----------------
+		7
+
