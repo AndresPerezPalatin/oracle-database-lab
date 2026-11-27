@@ -7,6 +7,9 @@
 --   + ix_ped_pendientes   Q12 (cada 30 s): índice parcial (solo el 2 % de filas en 'P') sobre una columna virtual
 --   + ix_ped_cp           Q3 (50/s) una vez reescrita con '30001': 0,01 % de filas por código postal, muy por debajo del umbral
 --   - ix_ped_importe      cero usos en la observación (MONITORING USAGE) y ya probado como INVISIBLE
+-- Evidencia 06: con 9 indices, cada INSERT modifica 20.2 bloques
+-- y genera 2561 bytes de redo; con los 5 indices finales,
+-- 12.2 bloques y 1704 bytes de redo por fila.
 --   = pk_pedido, ix_ped_fecha (Q2, Q8, Q9), pk_cliente, ux_cli_email (Q1 reescrita), ix_cli_pais_ciudad (Q6, skip scan aceptable)
 -- Q1, Q2, Q3 y Q11 se arreglan REESCRIBIENDO la consulta (sargabilidad), no con índices. Q10 y Q11: el recorrido completo es lo correcto.
 -- Idempotente: si ux_cli_dni ya existe, no hace nada.
