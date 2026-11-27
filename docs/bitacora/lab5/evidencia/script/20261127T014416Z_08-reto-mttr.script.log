@@ -1,0 +1,24 @@
+===== Antes de la carga =====
+
+ESTIMATED_MTTR ACTUAL_REDO_BLKS
+-------------- ----------------
+	     4		   3992
+
+
+Session altered.
+
+
+20000 rows updated.
+
+
+Commit complete.
+
+
+Session altered.
+
+===== Despues de la carga =====
+
+ESTIMATED_MTTR ACTUAL_REDO_BLKS
+-------------- ----------------
+	     4		   7655
+
